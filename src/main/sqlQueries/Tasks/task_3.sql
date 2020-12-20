@@ -1,0 +1,1 @@
+SELECT users_logs.http_query as website, COUNT(users_logs.user_ip) as ips FROM users_logs INNER JOIN user_data ON user_data.user_ip = users_logs.user_ip WHERE user_data.age < ? AND users_logs.query_time > DATEADD('DAY',-?, '2014-04-26 19:10:49') GROUP BY users_logs.http_query ORDER BY COUNT(users_logs.user_ip) DESC LIMIT 0, 3;

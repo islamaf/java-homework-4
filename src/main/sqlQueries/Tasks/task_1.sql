@@ -1,0 +1,1 @@
+SELECT TOP ? user_ip, gender, age, count(*) as top_count FROM user_data group by user_ip, gender, age ORDER BY count(*) DESC;

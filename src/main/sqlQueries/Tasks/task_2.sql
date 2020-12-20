@@ -1,0 +1,1 @@
+SELECT COUNT(user_data.user_ip) as top_count, users_logs.query_time, user_data.gender FROM users_logs INNER JOIN user_data ON users_logs.user_ip = user_data.user_ip WHERE datediff(dd, users_logs.query_time, (?)) = 0 GROUP BY user_data.gender, users_logs.query_time;
